@@ -18,7 +18,10 @@ module.exports = {
         robot.moveMouse(x, y);
     },
     moveClick : function(x,y){
-        this.moveMouse(x,y);
-        this.click(x,y);
+        var self = this;
+        setTimeout(function(){
+            self.moveMouse(x,y);
+            // self.click(x,y);
+        }, 3000);
     }
 };

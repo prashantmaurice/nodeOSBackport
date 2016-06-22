@@ -18,8 +18,10 @@ router.get('/move', function(req, res, next) {
 
 router.get('/move-click', function(req, res, next) {
     var query = req.query;
+    var x = query.x || 150;
+    var y = query.y || 150;
     console.log("move-click mouse : ",query);
-    mouseHandler.moveClick(200, 200);
+    mouseHandler.moveClick(x,y);
     res.send({moved : true});
 });
 
