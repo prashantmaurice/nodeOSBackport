@@ -21,8 +21,15 @@ router.get('/move-click', function(req, res, next) {
     var x = query.x || 150;
     var y = query.y || 150;
     var action = query.action || 'left';
+    if(action === "left_right"){
+        mouseHandler.moveClick(x,y,"left");
+        mouseHandler.moveClick(x,y,"right");
+
+    }
+    else{
+        mouseHandler.moveClick(x,y,action);
+    }
     console.log("move-click mouse : ",query);
-    mouseHandler.moveClick(x,y,action);
     res.send({moved : true});
 });
 
